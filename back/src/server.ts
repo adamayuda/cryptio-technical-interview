@@ -1,20 +1,35 @@
+import { config, generateConfig } from './config';
+import bodyParser from 'body-parser';
 import cors from 'cors';
 import express from 'express';
+import morgan from 'morgan';
 
-const server = express();
+import routes from './routes';
 
-// Enable CORS for *
-server.use(cors());
+export const startServer = async () => {
+  const app = express();
 
-server.get('/ping', (_, res) => {
-  res.send('pong');
-});
+  try {
+    generateConfig();
+  } catch (e) {
+    console.error(e.message);
+    return;
+  }
 
-const port = 8080;
-server.listen(port, () => {
-  console.log(
-    `Server listening on port ${port} (${
-      process.env.NODE_ENV ?? 'unknown environment'
-    })`,
-  );
-});
+  app.use(morgan('tiny'));
+  app.use(bodyParser.json());
+  app.use(cors());
+
+  app.use(routes());
+
+  app
+    .listen(config.PORT, () => {
+      console.log(`🚀 Server listening on port: ${config.PORT} 🚀`);
+    })
+    .on('error', (err) => {
+      console.error(err);
+      process.exit(1);
+    });
+};
+
+startServer();
