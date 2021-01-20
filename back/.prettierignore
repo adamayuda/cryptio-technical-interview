@@ -1,0 +1,15 @@
+.idea
+firebase
+node_modules/
+coverage
+dist
+*.prettierignore
+*.tsbuildinfo
+
+.*
+*.lock
+
+*.log
+*.svg
+*.ico
+*.ttf

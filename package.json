@@ -1,0 +1,32 @@
+{
+  "name": "cryptio-technical-interview",
+  "version": "1.0.0",
+  "description": "Code for cryptio-technical-interview",
+  "repository": "https://github.com/adamayuda/cryptio-technical-interview",
+  "private": true,
+  "workspaces": [
+    "back",
+    "front"
+  ],
+  "scripts": {
+    "dev": "concurrently \"cd front && yarn dev\" \"cd back && yarn dev\"",
+    "lint:check": "concurrently \"cd front && yarn lint:check\"  \"cd back && yarn lint:check\"",
+    "lint:fix": "concurrently \"cd front && yarn lint:fix\" \"cd back && yarn lint:fix\"",
+    "test": "concurrently \"cd front && yarn test\" \"cd back && yarn test\"",
+    "test:watch": "concurrently \"cd front && yarn test:watch\" \"cd back && yarn test:watch\"",
+    "test:cov": "concurrently \"cd front && yarn test:cov\" \"cd back && yarn test:cov\"",
+    "test:cov:watch": "concurrently \"cd front && yarn test:cov:watch\" \"cd back && yarn test:cov:watch\""
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.11.0",
+    "@typescript-eslint/parser": "^4.11.0",
+    "concurrently": "^5.3.0",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-unicorn": "^24.0.0",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1"
+  }
+}
