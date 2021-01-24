@@ -1,14 +1,15 @@
 import BlockchainService from '../../services/blockchain';
+import CryptoController from '../../controllers/crypto';
 import { Router } from 'express';
-import TransactionController from '../../controllers/crypto';
 
 const route = Router();
 
 const blockchainService = new BlockchainService();
-const transactionController = new TransactionController(blockchainService);
+const cryptoController = new CryptoController(blockchainService);
 
 export default (app: Router) => {
-  app.use('/transactions', route);
+  app.use('/crypto', route);
 
-  route.post('/health', transactionController.health);
+  route.get('/:address/balance', cryptoController.getHistoricalBalances);
+  route.post('/health', cryptoController.health);
 };

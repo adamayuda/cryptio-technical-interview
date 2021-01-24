@@ -3,6 +3,7 @@ import { config, generateConfig } from '.';
 let error = '';
 let parsed: {
   PORT?: string;
+  BLOCKCHAIN_URL?: string;
   WRONG_KEY?: string;
 } = {
   WRONG_KEY: '3000',
@@ -25,6 +26,7 @@ describe('generateConfig', () => {
       error = '';
       parsed = {
         PORT: '3000',
+        BLOCKCHAIN_URL: 'url',
       };
     });
 
@@ -49,6 +51,7 @@ describe('generateConfig', () => {
       error = '';
       parsed = {
         PORT: '3000',
+        BLOCKCHAIN_URL: 'url',
       };
     });
 
@@ -56,6 +59,7 @@ describe('generateConfig', () => {
       generateConfig();
       expect(config).toEqual({
         PORT: '3000',
+        BLOCKCHAIN_URL: 'url',
       });
     });
 

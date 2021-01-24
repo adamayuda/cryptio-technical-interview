@@ -1,3 +1,12 @@
+export interface ICryptoTransactionsMatrix {
+  amount: number;
+  time: Date;
+}
+
 export interface ICryptoService {
-  getTransactions(): Promise<[]>;
+  getHistoricalBalances({
+    address,
+  }: {
+    address: string;
+  }): Promise<ICryptoTransactionsMatrix[]>;
 }
