@@ -5,6 +5,7 @@ export let config: Record<keyof typeof envSchema, string>;
 
 const envSchema = {
   PORT: Joi.string().required(),
+  BLOCKCHAIN_URL: Joi.string().required(),
 };
 
 export const generateConfig = (): void => {

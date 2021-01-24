@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import transaction from './transaction';
+import transaction from './crypto';
 
 export default () => {
   const app = Router();
