@@ -6,7 +6,6 @@ import {
 } from '../../types/blockchain';
 import {
   ICryptoService,
-  ICryptoTransactions,
   ICryptoTransactionsHistorical,
 } from '../../types/crypto';
 import axios from 'axios';
@@ -35,24 +34,6 @@ export default class BlockchainService implements ICryptoService {
       })
       .map((output: IBlockchainTransactionOut) => Number(output.value))
       .reduce((o1, o2) => o1 + o2, 0);
-    // if (inputsFounded[0]) {
-    //   const sum = inputsFounded.reduce((inputsTotal, input) => {
-    //     return {
-    //       ...inputsTotal,
-    //       prev_out: {
-    //         value:
-    //           Number(input.prev_out.value) + Number(inputsTotal.prev_out.value),
-    //       },
-    //     };
-    //   });
-    //   return Number(sum.prev_out.value) * -1;
-    //   // Number(input.prev_out.value) * -1;
-    // }
-
-    // const output = out.find((o: IBlockchainTransactionOut) => {
-    //   return o.addr === address;
-    // });
-    // if (output?.value) return Number(output.value);
 
     return outputsTotal + inputsTotal * -1;
   };
