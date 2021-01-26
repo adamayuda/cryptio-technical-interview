@@ -1,0 +1,33 @@
+@import "src/styles/colors.sass"
+@import "src/styles/device.sass"
+
+.transaction
+  margin-top: 10px
+  background-color: $color-main
+  padding: 10px 20px
+  border: 1px solid $color-third
+  border-radius: 3px
+  color: $color-third
+
+  .header
+    display: grid
+    grid-template-columns: auto 100px
+
+    h3
+      margin: 0
+
+    .amount
+      border-radius: 3px
+      padding: 5px 10px
+      text-align: right
+
+      &.green
+        background-color: $color-green-light
+        color: $color-green
+      &.red
+        background-color: $color-red-light
+        color: $color-red
+  .date
+    text-align: right
+    margin-top: 10px
+

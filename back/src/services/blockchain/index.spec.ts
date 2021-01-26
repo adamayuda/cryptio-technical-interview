@@ -162,15 +162,22 @@ describe('BlockchainService', () => {
       blockchainService.getHistoricalBalances({
         address: '1GY9ci8L4EK2U3baXnuvNtpFEiL4CMsVob',
       }),
-    ).resolves.toEqual([
-      {
-        amount: -49373204,
-        time: 1609781396,
-      },
-      {
-        amount: 49373204,
-        time: 1609781396,
-      },
-    ]);
+    ).resolves.toEqual({
+      balance: 0,
+      transactions: [
+        {
+          amount: -49373204,
+          hash:
+            'da6fac585dfe796151905a9f9884e6fa1e0cb907b9b0ad2f502c16dc597e2384',
+          time: 1609781396,
+        },
+        {
+          amount: 49373204,
+          hash:
+            'da6fac585dfe796151905a9f9884e6fa1e0cb907b9b0ad2f502c16dc597e2384',
+          time: 1609781396,
+        },
+      ],
+    });
   });
 });

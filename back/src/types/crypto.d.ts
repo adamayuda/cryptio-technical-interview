@@ -1,6 +1,12 @@
-export interface ICryptoTransactionsMatrix {
+export interface ICryptoTransactions {
+  hash: string;
   amount: number;
   time: Date;
+}
+
+export interface ICryptoTransactionsHistorical {
+  balance: number;
+  transactions: ICryptoTransactions[];
 }
 
 export interface ICryptoService {
@@ -8,5 +14,5 @@ export interface ICryptoService {
     address,
   }: {
     address: string;
-  }): Promise<ICryptoTransactionsMatrix[]>;
+  }): Promise<ICryptoTransactionsHistorical>;
 }

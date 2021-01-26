@@ -1,0 +1,16 @@
+@import "src/styles/colors.sass"
+@import "src/styles/fonts.sass"
+@import "src/styles/device.sass"
+
+body
+  background-color: $color-main
+  margin: 0
+
+  .container
+    height: 100%
+    margin: auto
+    padding: 0 20px
+
+@media (min-width: $breakpoint-laptop)
+  .container
+    width: $breakpoint-laptop

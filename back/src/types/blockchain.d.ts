@@ -1,3 +1,5 @@
+import { ICryptoTransactionsHistorical } from 'src/types/crypto';
+
 export interface IBlockchainTransactionOut {
   value: string | number;
   hash?: string;
@@ -20,6 +22,7 @@ export interface IBlockchainTransaction {
   hash: string;
   ver: number;
   vin_sz: number;
+  ICryptoTransactionsHistorical;
   vout_sz: number;
   time: Date;
   lock_time: string;

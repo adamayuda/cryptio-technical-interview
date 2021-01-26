@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/post/index.tsx Render Post component 1`] = `
+<div>
+  <div
+    class="post"
+  >
+    <div
+      class="user"
+    >
+      <img
+        alt=""
+        src="test-file-stub"
+      />
+      <strong>
+        Nicole Hamilton
+      </strong>
+    </div>
+    <img
+      alt=""
+      class="photo"
+      src="test-file-stub"
+    />
+    <div
+      class="postContent"
+    >
+      <div
+        class="actions"
+      >
+        <div>
+          <img
+            alt="LinkedTeam"
+            src="test-file-stub"
+          />
+          <img
+            alt="LinkedTeam"
+            src="test-file-stub"
+          />
+          <img
+            alt="LinkedTeam"
+            src="test-file-stub"
+          />
+        </div>
+        <img
+          alt="LinkedTeam"
+          src="test-file-stub"
+        />
+      </div>
+      <div
+        class="likes"
+      >
+        <strong>
+          12
+           likes
+        </strong>
+      </div>
+      <div
+        class="comments"
+      >
+        <div
+          class="comment"
+        >
+          <div>
+            <strong>
+              Nicole Hamilton
+            </strong>
+            <span>
+              Hello World! 🙂
+            </span>
+          </div>
+          <img
+            alt="LinkedTeam"
+            src="test-file-stub"
+          />
+        </div>
+        <div
+          class="comment"
+        >
+          <div>
+            <strong>
+              Adam Kenny
+            </strong>
+            <span>
+              How are you? 🥳
+            </span>
+          </div>
+          <img
+            alt="LinkedTeam"
+            src="test-file-stub"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
