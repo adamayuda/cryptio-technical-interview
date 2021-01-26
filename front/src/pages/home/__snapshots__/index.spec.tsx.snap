@@ -2,66 +2,29 @@
 
 exports[`src/pages/home/index.tsx Render Home page 1`] = `
 <div>
-  <nav>
-    <div
-      class="container"
-    >
-      <div
-        class="navGrid"
-      >
-        <img
-          alt="LinkedTeam"
-          src="test-file-stub"
-        />
-        <img
-          alt="LinkedTeam"
-          src="test-file-stub"
-        />
-        <img
-          alt="LinkedTeam"
-          src="test-file-stub"
-        />
-      </div>
-    </div>
-  </nav>
-  <div
-    class="navBottom"
-  >
-    <div
-      class="navGrid"
-    >
-      <img
-        alt="LinkedTeam"
-        src="test-file-stub"
-      />
-      <img
-        alt="LinkedTeam"
-        src="test-file-stub"
-      />
-      <img
-        alt="LinkedTeam"
-        src="test-file-stub"
-      />
-      <img
-        alt="LinkedTeam"
-        src="test-file-stub"
-      />
-      <img
-        alt="LinkedTeam"
-        src="test-file-stub"
-      />
-    </div>
-  </div>
   <div
     class="home"
   >
     <div
       class="container"
     >
-      <div
-        class="posts"
-      />
+      <form>
+        <input
+          placeholder="Address"
+          type="text"
+          value=""
+        />
+        <input
+          class="submit"
+          type="submit"
+          value="Search"
+        />
+      </form>
     </div>
   </div>
 </div>
 `;
+
+exports[`src/pages/home/index.tsx should add an item based on the value in the state 1`] = `ShallowWrapper {}`;
+
+exports[`src/pages/home/index.tsx should pass a selected value to the onChange function 1`] = `ShallowWrapper {}`;

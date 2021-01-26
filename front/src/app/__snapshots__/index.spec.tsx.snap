@@ -6,7 +6,7 @@ exports[`src/app/index.tsx Render App page 1`] = `
     class="loading"
   >
     <img
-      alt="LinkedTeam"
+      alt="cryptio"
       src="test-file-stub"
     />
   </div>
@@ -19,7 +19,7 @@ exports[`src/app/index.tsx Render App page with laptop device 1`] = `
     class="loading"
   >
     <img
-      alt="LinkedTeam"
+      alt="cryptio"
       src="test-file-stub"
     />
   </div>

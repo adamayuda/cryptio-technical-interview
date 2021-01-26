@@ -13,9 +13,8 @@ export const Home: FC = () => {
     e: React.FormEvent<HTMLFormElement>,
   ): Promise<void> => {
     e.preventDefault();
-    console.log(address);
     const { data } = await axios.get<ITransactionsMatrix>(
-      `http://localhost:3000/crypto/${address}/balance`,
+      `http://localhost:3001/crypto/${address}/balance`,
       {
         headers: {
           "Content-Type": "application/json",

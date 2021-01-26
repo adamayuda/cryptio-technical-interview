@@ -6,7 +6,7 @@ exports[`src/components/loading/index.tsx Render Loading component 1`] = `
     class="loading"
   >
     <img
-      alt="LinkedTeam"
+      alt="cryptio"
       src="test-file-stub"
     />
   </div>

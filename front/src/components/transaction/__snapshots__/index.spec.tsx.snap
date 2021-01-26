@@ -1,95 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`src/components/post/index.tsx Render Post component 1`] = `
+exports[`src/components/transaction/index.tsx Render Transaction component 1`] = `
 <div>
   <div
-    class="post"
+    class="transaction"
   >
     <div
-      class="user"
+      class="header"
     >
-      <img
-        alt=""
-        src="test-file-stub"
-      />
-      <strong>
-        Nicole Hamilton
-      </strong>
+      <h3>
+        hash
+      </h3>
+      <div
+        class="amount green"
+      >
+        0
+      </div>
     </div>
-    <img
-      alt=""
-      class="photo"
-      src="test-file-stub"
-    />
     <div
-      class="postContent"
+      class="date"
     >
-      <div
-        class="actions"
+      <time
+        datetime="1234000"
       >
-        <div>
-          <img
-            alt="LinkedTeam"
-            src="test-file-stub"
-          />
-          <img
-            alt="LinkedTeam"
-            src="test-file-stub"
-          />
-          <img
-            alt="LinkedTeam"
-            src="test-file-stub"
-          />
-        </div>
-        <img
-          alt="LinkedTeam"
-          src="test-file-stub"
-        />
-      </div>
+        1970/01/01 04:20
+      </time>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`src/components/transaction/index.tsx Render Transaction component 2`] = `
+<div>
+  <div
+    class="transaction"
+  >
+    <div
+      class="header"
+    >
+      <h3>
+        hash
+      </h3>
       <div
-        class="likes"
+        class="amount red"
       >
-        <strong>
-          12
-           likes
-        </strong>
+        -9.000000000000001e-7
       </div>
-      <div
-        class="comments"
+    </div>
+    <div
+      class="date"
+    >
+      <time
+        datetime="1234000"
       >
-        <div
-          class="comment"
-        >
-          <div>
-            <strong>
-              Nicole Hamilton
-            </strong>
-            <span>
-              Hello World! 🙂
-            </span>
-          </div>
-          <img
-            alt="LinkedTeam"
-            src="test-file-stub"
-          />
-        </div>
-        <div
-          class="comment"
-        >
-          <div>
-            <strong>
-              Adam Kenny
-            </strong>
-            <span>
-              How are you? 🥳
-            </span>
-          </div>
-          <img
-            alt="LinkedTeam"
-            src="test-file-stub"
-          />
-        </div>
-      </div>
+        1970/01/01 04:20
+      </time>
     </div>
   </div>
 </div>
