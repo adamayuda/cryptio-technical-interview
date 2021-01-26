@@ -20,19 +20,41 @@ export default class BlockchainService implements ICryptoService {
     transaction: IBlockchainTransaction;
     address: string;
   }): number => {
-    const { inputs, out } = transaction;
+    const { inputs, out: outputs } = transaction;
 
-    const input = inputs.find((input: IBlockchainTransactionInput) => {
-      return input.prev_out.addr === address;
-    });
-    if (input?.prev_out.value) return Number(input.prev_out.value) * -1;
+    const inputsTotal: number = inputs
+      .filter((input: IBlockchainTransactionInput) => {
+        return input.prev_out.addr === address;
+      })
+      .map((input) => Number(input.prev_out.value))
+      .reduce((i1, i2) => i1 + i2, 0);
 
-    const output = out.find((o: IBlockchainTransactionOut) => {
-      return o.addr === address;
-    });
-    if (output?.value) return Number(output.value);
+    const outputsTotal: number = outputs
+      .filter((output: IBlockchainTransactionOut) => {
+        return output.addr === address;
+      })
+      .map((output: IBlockchainTransactionOut) => Number(output.value))
+      .reduce((o1, o2) => o1 + o2, 0);
+    // if (inputsFounded[0]) {
+    //   const sum = inputsFounded.reduce((inputsTotal, input) => {
+    //     return {
+    //       ...inputsTotal,
+    //       prev_out: {
+    //         value:
+    //           Number(input.prev_out.value) + Number(inputsTotal.prev_out.value),
+    //       },
+    //     };
+    //   });
+    //   return Number(sum.prev_out.value) * -1;
+    //   // Number(input.prev_out.value) * -1;
+    // }
 
-    return 0;
+    // const output = out.find((o: IBlockchainTransactionOut) => {
+    //   return o.addr === address;
+    // });
+    // if (output?.value) return Number(output.value);
+
+    return outputsTotal + inputsTotal * -1;
   };
 
   getTransactionsMatrix = ({
@@ -94,14 +116,13 @@ export default class BlockchainService implements ICryptoService {
   }: {
     address: string;
   }): Promise<ICryptoTransactionsHistorical> {
-    let offset = 0;
     const {
       data: { txs, n_tx },
     } = await axios.get<IBlockchainAddress>(
-      `${config.BLOCKCHAIN_URL}/rawaddr/${address}?offset=${offset}`,
+      `${config.BLOCKCHAIN_URL}/rawaddr/${address}?offset=${0}`,
     );
 
-    if (offset + 50 < n_tx) {
+    if (n_tx > 50) {
       const transactions: IBlockchainTransaction[] = await this.fetchTransactionsPerPage(
         {
           address,
